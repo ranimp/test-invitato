@@ -3,6 +3,7 @@
 import { Box, Image } from '@chakra-ui/react';
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import Animation from '@/app/components/animation';
 
 export default function Section8() {
   const images = [
@@ -70,23 +71,27 @@ export default function Section8() {
         `}
       </style>
       <Box p="16px">
-        <Image src="https://user-images.githubusercontent.com/10141928/147430930-d27df943-444f-41cc-8d5f-4d9da680d668.jpeg" alt="wedding" w="100%" h="100%" borderRadius="16px" mb="12px" />
-        <ImageGallery 
-          items={images}
-          autoPlay={true} 
-          showThumbnails={false} 
-          renderItem={(item) => (
-            <div className="image-gallery-image">
-              <img
-                src={item.original}
-                alt={item.description}
-                style={{ borderRadius: "16px" }}
-              />
-            </div>
-          )}
-          renderLeftNav={customLeftArrow}
-          renderRightNav={customRightArrow}
-        />
+        <Animation>
+          <Image src="https://user-images.githubusercontent.com/10141928/147430930-d27df943-444f-41cc-8d5f-4d9da680d668.jpeg" alt="wedding" w="100%" h="100%" borderRadius="16px" mb="12px" />
+        </Animation>
+        <Animation>
+          <ImageGallery 
+            items={images}
+            autoPlay={true} 
+            showThumbnails={false} 
+            renderItem={(item) => (
+              <div className="image-gallery-image">
+                <img
+                  src={item.original}
+                  alt={item.description}
+                  style={{ borderRadius: "16px" }}
+                />
+              </div>
+            )}
+            renderLeftNav={customLeftArrow}
+            renderRightNav={customRightArrow}
+          />
+        </Animation>
       </Box>
     </Box>
   );

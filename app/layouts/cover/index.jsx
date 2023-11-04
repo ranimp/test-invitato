@@ -1,4 +1,5 @@
 import { Box, Text, Heading, Image, Button, Icon } from '@chakra-ui/react';
+import Animation from '@/app/components/animation';
 
 export default function Cover({onClick, isLoading}) {
   return (
@@ -34,40 +35,44 @@ export default function Cover({onClick, isLoading}) {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            color="#FFF"
-          >
-            <Image src="/icons/bird.svg" alt="bird" pt="75px" mb="16px" />
-            <Text fontSize="sm" mb="4px">THE WEDDING OF</Text>
-            <Heading fontSize="36px">Nailal & Via</Heading>
-          </Box>
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="end"
-            alignItems="center"
-          >
-            <Button
-              backgroundColor="#B4C5D4AD"
-              color="white"
-              _hover={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+          <Animation>
+            <Box
               display="flex"
+              flexDirection="column"
+              justifyContent="center"
               alignItems="center"
-              gap="2"
-              w="145px"
-              borderRadius="20px"
-              mb="75px"
-              onClick={onClick}
-              isLoading={isLoading}
+              color="#FFF"
             >
-              <Image src="/icons/message.svg" alt="msg" color="#FFF" />
-              <Text fontSize="sm">Open Invitation</Text>
-            </Button>
-          </Box>
+                <Image src="/icons/bird.svg" alt="bird" pt="75px" mb="16px" />
+                <Text fontSize="sm" mb="4px">THE WEDDING OF</Text>
+                <Heading fontSize="36px">Nailal & Via</Heading>
+            </Box>
+          </Animation>
+          <Animation>  
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="end"
+              alignItems="center"
+            >
+                <Button
+                  backgroundColor="#B4C5D4AD"
+                  color="white"
+                  _hover={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+                  display="flex"
+                  alignItems="center"
+                  gap="2"
+                  w="145px"
+                  borderRadius="20px"
+                  mb="75px"
+                  onClick={onClick}
+                  isLoading={isLoading}
+                >
+                  <Image src="/icons/message.svg" alt="msg" color="#FFF" />
+                  <Text fontSize="sm">Open Invitation</Text>
+                </Button>
+            </Box>
+          </Animation>
         </Box>
       </Box>
       <Box

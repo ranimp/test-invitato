@@ -1,4 +1,5 @@
 import { Box, Text, Image, Divider, Center } from '@chakra-ui/react';
+import Animation from '@/app/components/animation';
 
 export default function Section1() {
   return (
@@ -24,12 +25,18 @@ export default function Section1() {
           borderRadius="16px"
           textAlign="center"
         >
-          <Image src="/photos/section2.jpeg" alt="wedding" borderRadius="48% 48% 8px 8px" w="200px" h="300px" />
-          <Center height='50px'>
-            <Divider orientation='vertical' />
-          </Center>
-          <Text fontSize="xs" fontWeight="500" fontStyle="italic">"And of all things We created two mates [i.e., counterparts]; perhaps you will remember."</Text>
-          <Text fontSize="sm" fontWeight="bold">(Az-Zariyat 51:49)</Text>
+          <Animation>
+            <Image src="/photos/section2.jpeg" alt="wedding" borderRadius="48% 48% 8px 8px" w="200px" h="300px" />
+          </Animation>
+          <Animation>  
+            <Center height='50px'>
+              <Divider orientation='vertical' />
+            </Center>
+          </Animation>
+          <Animation>
+            <Text fontSize="xs" fontWeight="500" fontStyle="italic">"And of all things We created two mates [i.e., counterparts]; perhaps you will remember."</Text>
+            <Text fontSize="sm" fontWeight="bold">(Az-Zariyat 51:49)</Text>
+          </Animation>
         </Box>
       </Box>
     </Box>

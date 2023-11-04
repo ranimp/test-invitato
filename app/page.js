@@ -4,16 +4,19 @@ import React, { useState } from 'react';
 import { Box, Text, Heading } from '@chakra-ui/react';
 import Cover from '@/app/layouts/cover';
 import WelcomingSection from '@/app/layouts/welcoming-section';
-import './globals.css';
+import BackgroundMusicPlayer from '@/app/components/musicPlayer';
+import Animation from '@/app/components/animation';
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
   const handleClick = () => {
     setIsLoading(true);
-
+    
     setTimeout(() => {
+      setIsMusicPlaying(!isMusicPlaying);
       setIsOpen(!isOpen);
       setIsLoading(false);
     }, 1000);
@@ -50,10 +53,12 @@ export default function Home() {
               bg="rgba(180, 197, 212, 0.35)"
             >
               <Box p="42px" color="#67544E">
+              <Animation>
                 <Text letterSpacing="2px" fontSize="16px" fontWeight="300">THE WEDDING OF</Text>
                 <Heading fontWeight="300" fontSize="72px" my="32px">Nailal & Via</Heading>
                 <Text letterSpacing="1px" fontSize="16px" fontWeight="300" fontStyle="italic" w="500px">“And I knew exactly how old Walt Disney’s Cinderella felt when she found her prince.”</Text>
                 <Text letterSpacing="1px" fontSize="16px" fontWeight="300" fontStyle="italic" w="500px">— Elizabeth Young</Text>
+              </Animation>
               </Box>
             </Box>
           </Box>
@@ -66,6 +71,10 @@ export default function Home() {
           }
         </Box>
       </Box>
+      <BackgroundMusicPlayer
+        videoId="XBPcBUJb6o0"
+        isPlaying={isMusicPlaying}
+      />
     </main>
   );
 }
