@@ -20,7 +20,6 @@ export default function Section6() {
           </Box>
         </Animation>
         <Animation>
-
           <Box
             display="flex"
             flexDirection="column"
@@ -44,7 +43,7 @@ export default function Section6() {
               <FormLabel fontSize="sm">Will you attend the wedding?</FormLabel>
               <Select color="#67544E" bgColor="white" size="sm">
                 <option value='yes'>Yes, I will gladly attend</option>
-                <option value='no'>No, I cant't attend the wedding</option>
+                <option value='no'>No, I can&apos;t attend the wedding</option>
               </Select>
             </FormControl>
             <FormControl color="#67544E">

@@ -21,8 +21,6 @@ export default function Section5() {
             alignItems="center"
             borderRadius="16px"
             textAlign="center"
-            color="white"
-            textAlign="center"
           >
             <Animation>
               <Heading fontSize="30px" fontWeight="700">Wedding Celebration</Heading>
@@ -50,7 +48,6 @@ export default function Section5() {
               </HStack>
             </Animation>
             <Animation>
-
               <Box
                 bgImage="url('/photos/wedding.jpeg')"
                 bgSize="cover"

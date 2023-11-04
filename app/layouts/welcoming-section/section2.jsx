@@ -34,7 +34,7 @@ export default function Section1() {
             </Center>
           </Animation>
           <Animation>
-            <Text fontSize="xs" fontWeight="500" fontStyle="italic">"And of all things We created two mates [i.e., counterparts]; perhaps you will remember."</Text>
+            <Text fontSize="xs" fontWeight="500" fontStyle="italic">&quot;And of all things We created two mates [i.e., counterparts]; perhaps you will remember.&quot;</Text>
             <Text fontSize="sm" fontWeight="bold">(Az-Zariyat 51:49)</Text>
           </Animation>
         </Box>

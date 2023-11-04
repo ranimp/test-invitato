@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 
 function BackgroundMusicPlayer({ videoId, isPlaying }) {
-  const [player, setPlayer] = useState(null);
+  const [player, setPlayer] = useState('');
 
   const playerOpts = {
     height: '0',
