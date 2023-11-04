@@ -1,9 +1,26 @@
-import { Box, Text, Heading, Image, Button, Icon } from '@chakra-ui/react';
+'use client';
+
+import React, { useState } from 'react';
+import { Box, Text, Heading } from '@chakra-ui/react';
 import Cover from '@/app/layouts/cover';
+import WelcomingSection from '@/app/layouts/welcoming-section';
+import './globals.css';
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = () => {
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsOpen(!isOpen);
+      setIsLoading(false);
+    }, 1000);
+  };
+
   return (
-    <main>
+    <main style={{backgroundColor: "#ECECEC"}}>
       <Box
         bgImage={{ base: 'none', md: '#FFF', xl: "url('/photos/wedding.jpeg')" }}
         bgSize="contain"
@@ -16,7 +33,7 @@ export default function Home() {
           h="100%"
           bg={{base:"rgba(0,0,0,0)", xl:"rgba(0, 0, 0, 0.3)"}}
           display="grid"
-          gridTemplateColumns={{xl: "67% 0.5% 32.5%"}}
+          gridTemplateColumns={{xl: "65.5% 0.5% 34%"}}
           alignItems="center"
         >
           <Box
@@ -43,7 +60,10 @@ export default function Home() {
           <Box
             display={{ base: 'none', xl: 'block' }}
           ></Box>
-          <Cover />
+          {isOpen ? 
+          <WelcomingSection /> :
+          <Cover onClick={handleClick} isLoading={isLoading} />
+          }
         </Box>
       </Box>
     </main>

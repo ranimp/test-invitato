@@ -1,6 +1,6 @@
 import { Box, Text, Heading, Image, Button, Icon } from '@chakra-ui/react';
 
-export default function Cover() {
+export default function Cover({onClick, isLoading}) {
   return (
     <Box
       w="100%"
@@ -42,7 +42,7 @@ export default function Cover() {
             color="#FFF"
           >
             <Image src="/icons/bird.svg" alt="bird" pt="75px" mb="16px" />
-            <Text fontSize="14px" mb="16px">THE WEDDING OF</Text>
+            <Text fontSize="sm" mb="4px">THE WEDDING OF</Text>
             <Heading fontSize="36px">Nailal & Via</Heading>
           </Box>
           <Box
@@ -61,9 +61,11 @@ export default function Cover() {
               w="145px"
               borderRadius="20px"
               mb="75px"
+              onClick={onClick}
+              isLoading={isLoading}
             >
               <Image src="/icons/message.svg" alt="msg" color="#FFF" />
-              <Text fontSize="14px">Open Invitation</Text>
+              <Text fontSize="sm">Open Invitation</Text>
             </Button>
           </Box>
         </Box>
@@ -77,7 +79,7 @@ export default function Cover() {
         pt="60px"
         transform="translateY(-60px)"
       >
-        <Box bgColor="#B4C5D5" color="#FFF" w="100%" p="16px" textAlign="center" fontSize="16px">
+        <Box bgColor="#B4C5D5" color="#FFF" w="100%" p="16px" textAlign="center" fontSize="md" transform="translateY(-10px)">
           <Text>Created with 🤍 by Invitato</Text>
           <Text>© 2023 Nailal & Via. All Rights Reserved</Text>
         </Box>
